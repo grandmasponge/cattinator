@@ -1,0 +1,22 @@
+// This is your Prisma schema file,
+// learn more about it in the docs: https://pris.ly/d/prisma-schema
+
+generator client {
+  provider = "prisma-client-js"
+}
+
+datasource db {
+  provider = "mysql"
+  url      = "mysql://root:root@127.0.0.1:3306/catinator"
+}
+
+
+model Ratings {
+  id Int @id
+  url   String? @unique
+  likes   Int
+  dislikes   Int
+}
+model bans {
+  ip String @unique
+}
